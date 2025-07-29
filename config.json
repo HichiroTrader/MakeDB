@@ -1,0 +1,71 @@
+{
+  "symbols": [
+    "ESZ23",
+    "CLZ23",
+    "NQZ23",
+    "YMZ23",
+    "RTY23"
+  ],
+  "exchanges": {
+    "ESZ23": "CME",
+    "CLZ23": "NYMEX",
+    "NQZ23": "CME",
+    "YMZ23": "CBOT",
+    "RTY23": "CME"
+  },
+  "rithmic": {
+    "system_name": "Rithmic Paper Trading",
+    "app_name": "RithmicDataCollector",
+    "app_version": "1.0.0",
+    "url": "wss://rituz00100.rithmic.com:443",
+    "reconnect_attempts": 5,
+    "reconnect_delay": 5,
+    "heartbeat_interval": 30
+  },
+  "database": {
+    "host": "db",
+    "port": 5432,
+    "name": "rithmic_db",
+    "user": "postgres",
+    "password": "securepassword",
+    "connection_pool_size": 10,
+    "connection_timeout": 30
+  },
+  "redis": {
+    "host": "redis",
+    "port": 6379,
+    "db": 0,
+    "connection_timeout": 10
+  },
+  "collector": {
+    "batch_size": 100,
+    "batch_timeout": 5,
+    "max_queue_size": 10000,
+    "level2_depth": 10,
+    "enable_tick_data": true,
+    "enable_level2_data": true
+  },
+  "api": {
+    "host": "0.0.0.0",
+    "port": 5000,
+    "debug": false,
+    "max_limit": 1000,
+    "default_tick_limit": 100,
+    "default_level2_limit": 50
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "file_enabled": false,
+    "file_path": "/app/logs/rithmic_collector.log",
+    "max_file_size": "10MB",
+    "backup_count": 5
+  },
+  "monitoring": {
+    "health_check_interval": 60,
+    "metrics_enabled": true,
+    "alert_on_connection_loss": true,
+    "alert_on_data_gap": true,
+    "data_gap_threshold": 300
+  }
+}

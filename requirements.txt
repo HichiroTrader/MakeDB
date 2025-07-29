@@ -1,0 +1,10 @@
+async_rithmic>=1.5.3
+psycopg2-binary>=2.9.0
+flask>=2.3.0
+redis>=4.5.0
+pandas>=1.5.0
+numpy>=1.24.0
+python-dotenv>=1.0.0
+requests>=2.31.0
+aiofiles>=23.0.0
+aioredis>=2.0.0
