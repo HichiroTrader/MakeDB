@@ -67,11 +67,12 @@ services:
     volumes:
       - ./collector.py:/app/collector.py
       - ./rtrader_collector.py:/app/rtrader_collector.py
+      - ./rithmic_binary_collector.py:/app/rithmic_binary_collector.py
       - ./credentials:/app/credentials
     networks:
       - rithmic_network
     restart: unless-stopped
-    command: python rtrader_collector.py
+    command: python rithmic_binary_collector.py
 
   api:
     build:

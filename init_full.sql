@@ -29,19 +29,23 @@ CREATE TABLE IF NOT EXISTS tick_data (
     size INTEGER NOT NULL,
     trade_id VARCHAR(100),
     
-    -- Best bid/ask at time of trade
+    -- Best bid/ask at time of trade (MBP - Market By Price)
     bid_price DECIMAL(20,8),
     ask_price DECIMAL(20,8),
     bid_size INTEGER,
     ask_size INTEGER,
     
-    -- Trade direction/aggressor
+    -- Trade direction/aggressor (để phân biệt mua/bán chủ động)
     aggressor_side VARCHAR(10), -- 'BUY' or 'SELL'
     is_implied BOOLEAN DEFAULT FALSE,
     
     -- Additional fields
     trade_type VARCHAR(50),
     condition_codes VARCHAR(100),
+    
+    -- Volume delta tracking
+    buy_volume INTEGER DEFAULT 0,
+    sell_volume INTEGER DEFAULT 0,
     
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
